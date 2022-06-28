@@ -1,6 +1,5 @@
 package com.uce.edu.demo;
 
-//imports logs
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.modelo.to.Persona;
-import com.uce.edu.demo.service.IPersonaJdbcService;
-
-import net.bytebuddy.asm.Advice.This;
+import com.uce.edu.demo.modelo.to.Estudiante;
+import com.uce.edu.demo.service.IEstudianteJdbcService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -19,7 +16,7 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IPersonaJdbcService iPersonaJdbcService;
+	private IEstudianteJdbcService iEstudianteJdbcService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
@@ -27,37 +24,37 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		// no es tecnico realizar el sysout.
-		// System.out.println("HOLA MUNDO");
 
-		// estos son niveles
-		// Logger.info("Funciando log4j [HOLA MUNDO]");
-		// Logger.error("Error el estudiante no existe");
-		// este nivel se utiliza para consultar para saber que esta pasando
-		// Logger.debug(""); //nivel debug: debe ser relacionado al termino.
+		Estudiante estudiante = new Estudiante();
 
-		Persona person = new Persona();
-		person.setId(4);
-		person.setNombre("Edwin");
-		person.setApellido("Piruch");
-		
-		//INSERT
-		//this.iPersonaJdbcService.guardar(person);
-		
-		//UPDATE
-		//puedes actualizar la misma persona pero siempre y cuando no sea una lista.
-		//this.iPersonaJdbcService.actualizar(person);
-		
-		//DELETE
-		//no afecta a los otros parametros de apellido y nombre, con el identificador basta
-		//this.iPersonaJdbcService.eliminar(1);
-		
-		//SELECT
-		Logger.info("Retorna el id -> "+this.iPersonaJdbcService.buscarporId(3));
-		//buscando la persona por los atributos del constructor class.
-		Logger.info("Retorna la persona -> "+person);
+		estudiante.setId(3);
+		estudiante.setNombre("Juan");
+		estudiante.setApellido("Perez");
+		estudiante.setCedula("1231311111");
+		estudiante.setCarrera("Matematica");
 
+		// INSERT
+		this.iEstudianteJdbcService.insert(estudiante);
+		Logger.info("Se inserta el estudiante-> " + estudiante);
+
+		// UPDATE
+		Estudiante estudiante1 = new Estudiante();
+		estudiante1.setId(3);
+		estudiante1.setNombre("Juan");
+		estudiante1.setApellido("Pereza");
+		estudiante1.setCedula("1492929222");
+		estudiante1.setCarrera("Educacion");
+
+		this.iEstudianteJdbcService.actualizar(estudiante1);
+		Logger.info("Se actualiza el estudiante-> " + estudiante1);
+
+		// DELETE
+		this.iEstudianteJdbcService.eliminar(3);
+		Logger.info("Se elimina el estudiante-> "+estudiante1);
+
+		// SELECT
+		Logger.info("Se busca el estudiante -> "+this.iEstudianteJdbcService.buscar(2));
+		
 	}
 
 }

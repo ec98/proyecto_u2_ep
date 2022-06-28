@@ -12,6 +12,6 @@ public interface IPersonaJdbcRepository {
 
 	public void eliminar(int id);
 
-	// public ArrayList<Persona> buscarporApellido(String apellido);
+	// public ArrayList<Persona> buscarporApellido(String apellido); //debe tener sentido lo que voy a buscar
 
 }
