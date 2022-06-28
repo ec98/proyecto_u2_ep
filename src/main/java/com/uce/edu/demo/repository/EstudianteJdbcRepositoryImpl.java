@@ -14,8 +14,8 @@ public class EstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Estudiante buscar(int id) {
-		return this.jdbcTemplate.queryForObject("select * from estudiante where id=?", new Object[] { id },
+	public Estudiante buscar(String cedula) {
+		return this.jdbcTemplate.queryForObject("select * from estudiante where cedula=?", new Object[] { cedula },
 				new BeanPropertyRowMapper<Estudiante>(Estudiante.class));	}
 
 	@Override
@@ -33,8 +33,8 @@ public class EstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository {
 	}
 
 	@Override
-	public void eliminar(int id) {
-		this.jdbcTemplate.update("delete from estudiante where id=?", new Object[] { id });
+	public void eliminar(String cedula) {
+		this.jdbcTemplate.update("delete from estudiante where cedula=?", new Object[] { cedula });
 	}
 
 }

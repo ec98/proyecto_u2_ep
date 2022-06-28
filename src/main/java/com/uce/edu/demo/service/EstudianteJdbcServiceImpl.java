@@ -13,8 +13,8 @@ public class EstudianteJdbcServiceImpl implements IEstudianteJdbcService {
 	private IEstudianteJdbcRepository iEstudianteJdbcRepository;
 
 	@Override
-	public Estudiante buscar(int id) {
-		return this.iEstudianteJdbcRepository.buscar(id);
+	public Estudiante buscar(String cedula) {
+		return this.iEstudianteJdbcRepository.buscar(cedula);
 	}
 
 	@Override
@@ -28,8 +28,8 @@ public class EstudianteJdbcServiceImpl implements IEstudianteJdbcService {
 	}
 
 	@Override
-	public void eliminar(int id) {
-		this.iEstudianteJdbcRepository.eliminar(id);
+	public void eliminar(String cedula) {
+		this.iEstudianteJdbcRepository.eliminar(cedula);
 	}
 	
 }

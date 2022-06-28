@@ -3,7 +3,7 @@ package com.uce.edu.demo.modelo.to;
 
 public class Estudiante {
 
-	private int id;
+	private int id; //matricula
 	private String nombre;
 	private String apellido;
 	private String cedula;

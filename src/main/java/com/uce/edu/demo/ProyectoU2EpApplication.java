@@ -49,11 +49,11 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 		Logger.info("Se actualiza el estudiante-> " + estudiante1);
 
 		// DELETE
-		this.iEstudianteJdbcService.eliminar(3);
+		this.iEstudianteJdbcService.eliminar("1492929222");
 		Logger.info("Se elimina el estudiante-> "+estudiante1);
 
 		// SELECT
-		Logger.info("Se busca el estudiante -> "+this.iEstudianteJdbcService.buscar(2));
+		Logger.info("Se busca el estudiante -> "+this.iEstudianteJdbcService.buscar("183829221"));
 		
 	}
 

@@ -4,11 +4,11 @@ import com.uce.edu.demo.modelo.to.Estudiante;
 
 public interface IEstudianteJdbcService {
 	
-	public Estudiante buscar(int id);
+	public Estudiante buscar(String cedula);
 
 	public void insert(Estudiante estudiante);
 
 	public void actualizar(Estudiante estudiante);
 
-	public void eliminar(int id);
+	public void eliminar(String cedula);
 }
