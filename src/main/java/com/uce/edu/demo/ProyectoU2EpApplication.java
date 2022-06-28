@@ -17,42 +17,44 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 
 	@Autowired
 	private IEstudianteJdbcService iEstudianteJdbcService;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
+
 		Estudiante estudiante = new Estudiante();
 
 		estudiante.setId(3);
-		estudiante.setNombre("Juan");
-		estudiante.setApellido("Perez");
-		estudiante.setCedula("1231311111");
-		estudiante.setCarrera("Matematica");
+		estudiante.setNombre("Juana");
+		estudiante.setApellido("Lopez");
+		estudiante.setCedula("19212811818");
+		estudiante.setCarrera("Computacion");
 
 		// INSERT
-		this.iEstudianteJdbcService.insert(estudiante);
-		Logger.info("Se inserta el estudiante-> " + estudiante);
+		this.iEstudianteJdbcService.insertar(estudiante);
+		Logger.info("Se inserta el estudiante -> " + estudiante);
 
 		// UPDATE
+
 		Estudiante estudiante1 = new Estudiante();
 		estudiante1.setId(3);
 		estudiante1.setNombre("Juan");
-		estudiante1.setApellido("Pereza");
-		estudiante1.setCedula("1492929222");
-		estudiante1.setCarrera("Educacion");
+		estudiante1.setApellido("Jaramillo");
+		estudiante1.setCedula("13292929292");
+		estudiante1.setCarrera("Artes");
 
 		this.iEstudianteJdbcService.actualizar(estudiante1);
-		Logger.info("Se actualiza el estudiante-> " + estudiante1);
-
+		Logger.info("Se actualiza el estudiante -> " + estudiante1);
 		// DELETE
-		this.iEstudianteJdbcService.eliminar("1492929222");
-		Logger.info("Se elimina el estudiante-> "+estudiante1);
+
+		this.iEstudianteJdbcService.eliminar("13292929292");
+		Logger.info("Se elimina el estudiante -> " + estudiante1);
 
 		// SELECT
-		Logger.info("Se busca el estudiante -> "+this.iEstudianteJdbcService.buscar("183829221"));
+		Logger.info("Se busca el estudiante ->" + this.iEstudianteJdbcService.buscar("183829221"));
 	}
 
 }

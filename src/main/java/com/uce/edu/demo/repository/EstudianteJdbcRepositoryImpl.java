@@ -8,25 +8,29 @@ import org.springframework.stereotype.Repository;
 import com.uce.edu.demo.modelo.to.Estudiante;
 
 @Repository
-public class IEstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository{
+public class EstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	@Override
-	public Estudiante buscar(String cedula) {
-		return this.jdbcTemplate.queryForObject("select * from estudiante where cedula=?", new Object[] { cedula },
-				new BeanPropertyRowMapper<Estudiante>(Estudiante.class));	}
 
 	@Override
-	public void insert(Estudiante estudiante) {
-		this.jdbcTemplate.update("insert into estudiante (id, nombre, apellido, cedula, carrera) values (?,?,?,?,?)",
+	public Estudiante buscar(String cedula) {
+		// TODO Auto-generated method stub
+		return this.jdbcTemplate.queryForObject("select * from estudiante where cedula=?", new Object[] { cedula },
+				new BeanPropertyRowMapper<Estudiante>(Estudiante.class));
+	}
+
+	@Override
+	public void insertar(Estudiante estudiante) {
+		// TODO Auto-generated method stub
+		this.jdbcTemplate.update("insert into estudiante (id,nombre,apellido,cedula,carrera) values (?,?,?,?,?)",
 				new Object[] { estudiante.getId(), estudiante.getNombre(), estudiante.getApellido(),
 						estudiante.getCedula(), estudiante.getCarrera() });
 	}
 
 	@Override
 	public void actualizar(Estudiante estudiante) {
+		// TODO Auto-generated method stub
 		this.jdbcTemplate.update("update estudiante set nombre=?, apellido=?,cedula=?,carrera=? where id=?",
 				new Object[] { estudiante.getNombre(), estudiante.getApellido(), estudiante.getCedula(),
 						estudiante.getCarrera(), estudiante.getId() });
@@ -34,6 +38,7 @@ public class IEstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository{
 
 	@Override
 	public void eliminar(String cedula) {
+		// TODO Auto-generated method stub
 		this.jdbcTemplate.update("delete from estudiante where cedula=?", new Object[] { cedula });
 	}
 

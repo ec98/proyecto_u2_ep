@@ -1,35 +1,43 @@
 package com.uce.edu.demo.modelo.to;
 
 public class Estudiante {
-	
-	private int id; // matricula
+
+	private int id;
 	private String nombre;
 	private String apellido;
 	private String cedula;
 	private String carrera;
 
-	// Constructor por defecto
+	// por defect
 	public Estudiante() {
 
 	}
 
-	// Constructor con parametros
-	public Estudiante(String nombre, String apellido, String cedula, int id, String carrera) {
+	// constructor con paramteres
+	public Estudiante(int id, String nombre, String apellido, String cedula, String carrera) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.cedula = cedula;
-		this.id = id;
 		this.carrera = carrera;
 	}
 
 	@Override
 	public String toString() {
-		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", id=" + id
+		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
 				+ ", carrera=" + carrera + "]";
 	}
 
 	// GETTERS AND SETTERS
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -54,14 +62,6 @@ public class Estudiante {
 		this.cedula = cedula;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getCarrera() {
 		return carrera;
 	}
@@ -69,4 +69,5 @@ public class Estudiante {
 	public void setCarrera(String carrera) {
 		this.carrera = carrera;
 	}
+
 }
