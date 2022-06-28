@@ -1,9 +1,8 @@
 package com.uce.edu.demo.modelo.to;
 
-
 public class Estudiante {
-
-	private int id; //matricula
+	
+	private int id; // matricula
 	private String nombre;
 	private String apellido;
 	private String cedula;
@@ -70,5 +69,4 @@ public class Estudiante {
 	public void setCarrera(String carrera) {
 		this.carrera = carrera;
 	}
-
 }

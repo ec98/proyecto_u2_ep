@@ -17,14 +17,13 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 
 	@Autowired
 	private IEstudianteJdbcService iEstudianteJdbcService;
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-
 		Estudiante estudiante = new Estudiante();
 
 		estudiante.setId(3);
@@ -54,7 +53,6 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 
 		// SELECT
 		Logger.info("Se busca el estudiante -> "+this.iEstudianteJdbcService.buscar("183829221"));
-		
 	}
 
 }

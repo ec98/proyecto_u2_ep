@@ -8,7 +8,6 @@ import com.uce.edu.demo.repository.IEstudianteJdbcRepository;
 
 @Service
 public class EstudianteJdbcServiceImpl implements IEstudianteJdbcService {
-
 	@Autowired
 	private IEstudianteJdbcRepository iEstudianteJdbcRepository;
 
@@ -31,5 +30,4 @@ public class EstudianteJdbcServiceImpl implements IEstudianteJdbcService {
 	public void eliminar(String cedula) {
 		this.iEstudianteJdbcRepository.eliminar(cedula);
 	}
-	
 }

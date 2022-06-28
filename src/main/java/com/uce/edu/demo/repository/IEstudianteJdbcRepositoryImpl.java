@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.uce.edu.demo.modelo.to.Estudiante;
 
 @Repository
-public class EstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository {
+public class IEstudianteJdbcRepositoryImpl implements IEstudianteJdbcRepository{
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	
 	@Override
 	public Estudiante buscar(String cedula) {
 		return this.jdbcTemplate.queryForObject("select * from estudiante where cedula=?", new Object[] { cedula },
