@@ -1,19 +1,19 @@
 package com.uce.edu.demo.modelo.to;
 
 //no especificamente es un modelo.
-public class Persona {
+public class PersonaTo {
 	
 	private int id;
 	private String nombre;
 	private String apellido;
 
 	// CONSTRUTOR por defecto
-	public Persona() {
+	public PersonaTo() {
 
 	}
 
 	// es recomendado usar el constructor de la clase
-	public Persona(int id, String nombre, String apellido) {
+	public PersonaTo(int id, String nombre, String apellido) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

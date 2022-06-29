@@ -1705,3 +1705,382 @@ Consider defining a bean of type 'com.uce.edu.demo.repository.IEstudianteJdbcRep
 2022-06-28 02:43:23,959 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
 2022-06-28 02:43:23,964 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
 2022-06-28 02:43:23,966 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 18:32:48,428 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 22180 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 18:32:48,433 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 18:32:48,482 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 18:32:49,041 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 18:32:49,060 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces. 
+2022-06-28 18:32:49,482 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 18:32:49,547 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 18:32:49,735 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 18:32:49,871 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 18:32:50,109 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 18:32:50,130 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 18:32:50,414 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 18:32:50,424 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:32:50,602 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 18:32:50,640 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.584 seconds (JVM running for 3.948) 
+2022-06-28 18:32:50,678 [restartedMain] WARN  c.z.h.p.ProxyConnection                            - HikariPool-1 - Connection org.postgresql.jdbc.PgConnection@5767a68a marked as broken because of SQLSTATE(0A000), ErrorCode(0) 
+java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:699) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3937) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3941) ~[postgresql-42.3.5.jar:42.3.5]
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getNString(HikariProxyResultSet.java) ~[HikariCP-4.0.3.jar:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:63) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:1) ~[classes/:?]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:453) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$ea29d40e.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:37) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.uce.edu.demo.ProyectoU2EpApplication.main(ProyectoU2EpApplication.java:23) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.0.jar:2.7.0]
+2022-06-28 18:32:50,879 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2022-06-28 18:32:50,904 [restartedMain] ERROR o.s.b.SpringApplication                            - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.uce.edu.demo.ProyectoU2EpApplication.main(ProyectoU2EpApplication.java:23) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.0.jar:2.7.0]
+Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: StatementCallback; SQL [select * from persona]; Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.; nested exception is java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:96) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$ea29d40e.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:37) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	... 10 more
+Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:699) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3937) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3941) ~[postgresql-42.3.5.jar:42.3.5]
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getNString(HikariProxyResultSet.java) ~[HikariCP-4.0.3.jar:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:63) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:1) ~[classes/:?]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:453) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$ea29d40e.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:37) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	... 10 more
+2022-06-28 18:32:50,912 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:32:50,916 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 18:32:50,966 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 18:35:08,344 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 22492 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 18:35:08,371 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 18:35:08,752 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 18:35:11,303 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 18:35:11,398 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces. 
+2022-06-28 18:35:12,250 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 18:35:12,326 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 18:35:12,592 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 18:35:12,759 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 18:35:13,066 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 18:35:13,092 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 18:35:13,490 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 18:35:13,504 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:35:13,721 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 18:35:13,751 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 7.092 seconds (JVM running for 8.671) 
+2022-06-28 18:35:13,784 [restartedMain] WARN  c.z.h.p.ProxyConnection                            - HikariPool-1 - Connection org.postgresql.jdbc.PgConnection@47805df5 marked as broken because of SQLSTATE(0A000), ErrorCode(0) 
+java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:699) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3937) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3941) ~[postgresql-42.3.5.jar:42.3.5]
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getNString(HikariProxyResultSet.java) ~[HikariCP-4.0.3.jar:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:63) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:1) ~[classes/:?]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:453) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$cc237f26.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:36) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.uce.edu.demo.ProyectoU2EpApplication.main(ProyectoU2EpApplication.java:22) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.0.jar:2.7.0]
+2022-06-28 18:35:14,162 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2022-06-28 18:35:14,359 [restartedMain] ERROR o.s.b.SpringApplication                            - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.uce.edu.demo.ProyectoU2EpApplication.main(ProyectoU2EpApplication.java:22) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.0.jar:2.7.0]
+Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: StatementCallback; SQL [select * from persona]; Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.; nested exception is java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:96) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$cc237f26.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:36) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	... 10 more
+Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:699) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3937) ~[postgresql-42.3.5.jar:42.3.5]
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3941) ~[postgresql-42.3.5.jar:42.3.5]
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getNString(HikariProxyResultSet.java) ~[HikariCP-4.0.3.jar:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:63) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$PersonaRowMapper.mapRow(PersonaJdbcRepositoryImpl.java:1) ~[classes/:?]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:453) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl.buscarTodos(PersonaJdbcRepositoryImpl.java:52) ~[classes/:?]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$FastClassBySpringCGLIB$$e9d8971c.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.uce.edu.demo.repository.PersonaJdbcRepositoryImpl$$EnhancerBySpringCGLIB$$cc237f26.buscarTodos(<generated>) ~[classes/:?]
+	at com.uce.edu.demo.service.PersonaJdbcServiceImpl.buscarTodos(PersonaJdbcServiceImpl.java:40) ~[classes/:?]
+	at com.uce.edu.demo.ProyectoU2EpApplication.run(ProyectoU2EpApplication.java:36) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.0.jar:2.7.0]
+	... 10 more
+2022-06-28 18:35:14,409 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:35:14,426 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 18:35:14,577 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 18:36:01,582 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 19624 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 18:36:01,586 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 18:36:01,642 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 18:36:02,113 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 18:36:02,131 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces. 
+2022-06-28 18:36:02,521 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 18:36:02,585 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 18:36:02,778 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 18:36:02,888 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 18:36:03,107 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 18:36:03,128 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 18:36:03,419 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 18:36:03,433 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:36:03,615 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 18:36:03,641 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.442 seconds (JVM running for 3.795) 
+2022-06-28 18:36:03,668 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - List-> [Persona [id=9, nombre=Ninett, apellido=Diaz], Persona [id=4, nombre=Carlos, apellido=Piruch]] 
+2022-06-28 18:36:03,681 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:36:03,687 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 18:36:03,939 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 18:38:43,899 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 18868 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 18:38:43,903 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 18:38:43,959 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 18:38:44,513 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 18:38:44,531 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces. 
+2022-06-28 18:38:44,968 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 18:38:45,030 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 18:38:45,205 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 18:38:45,322 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 18:38:45,725 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 18:38:45,745 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 18:38:46,040 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 18:38:46,051 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:38:46,212 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 18:38:46,235 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.755 seconds (JVM running for 4.083) 
+2022-06-28 18:38:46,267 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - List-> [Persona [id=4, nombre=Carlos, apellido=Piruch], Persona [id=9, nombre=Ninett, apellido=Diaz]] 
+2022-06-28 18:38:46,276 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 18:38:46,279 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 18:38:46,291 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 19:42:21,421 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 8900 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 19:42:21,426 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 19:42:21,475 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 19:42:21,964 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 19:42:21,983 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces. 
+2022-06-28 19:42:22,379 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 19:42:22,437 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 19:42:22,641 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 19:42:22,761 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 19:42:22,986 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 19:42:23,006 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 19:42:23,728 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 19:42:23,738 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:42:23,924 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 19:42:23,945 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.897 seconds (JVM running for 4.176) 
+2022-06-28 19:42:24,067 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Buscando id -> com.uce.edu.demo.repository.modelo.Persona@7d16c179 
+2022-06-28 19:42:24,074 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:42:24,078 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 19:42:24,082 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 19:44:36,371 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 1500 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 19:44:36,377 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 19:44:36,427 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 19:44:36,915 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 19:44:36,934 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces. 
+2022-06-28 19:44:37,444 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 19:44:37,504 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 19:44:37,702 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 19:44:37,813 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 19:44:38,129 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 19:44:38,154 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 19:44:38,831 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 19:44:38,840 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:44:39,029 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 19:44:39,050 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 3.156 seconds (JVM running for 4.608) 
+2022-06-28 19:44:39,175 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Dato con JPA -> Persona [id=4, nombre=Carlos, apellido=Piruch] 
+2022-06-28 19:44:39,183 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:44:39,187 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 19:44:39,190 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 19:56:02,082 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 10768 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 19:56:02,085 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 19:56:02,143 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 19:56:02,604 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 19:56:02,623 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces. 
+2022-06-28 19:56:03,020 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 19:56:03,077 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 19:56:03,260 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 19:56:03,372 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 19:56:03,605 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 19:56:03,625 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 19:56:04,303 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 19:56:04,312 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:56:04,500 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 19:56:04,523 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.856 seconds (JVM running for 4.224) 
+2022-06-28 19:56:04,641 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Dato con JPA -> Persona [id=4, nombre=Carlos, apellido=Piruch] 
+2022-06-28 19:56:04,666 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:56:04,670 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 19:56:04,673 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 19:57:55,999 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 22304 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 19:57:56,003 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 19:57:56,053 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 19:57:56,560 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 19:57:56,582 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces. 
+2022-06-28 19:57:57,013 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 19:57:57,087 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 19:57:57,293 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 19:57:57,412 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 19:57:57,636 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 19:57:57,655 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 19:57:58,347 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 19:57:58,359 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:57:58,589 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 19:57:58,610 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.997 seconds (JVM running for 4.379) 
+2022-06-28 19:57:58,728 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Dato con JPA -> Persona [id=4, nombre=Carlos, apellido=Piruch] 
+2022-06-28 19:57:58,765 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:57:58,769 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 19:57:58,772 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-06-28 19:59:07,715 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 18292 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-06-28 19:59:07,720 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-06-28 19:59:07,771 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-06-28 19:59:08,236 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-06-28 19:59:08,256 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces. 
+2022-06-28 19:59:08,672 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-06-28 19:59:08,740 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-06-28 19:59:08,920 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-06-28 19:59:09,031 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-06-28 19:59:09,254 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-06-28 19:59:09,275 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-06-28 19:59:09,961 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-06-28 19:59:09,970 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:59:10,184 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-06-28 19:59:10,206 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.893 seconds (JVM running for 4.22) 
+2022-06-28 19:59:10,329 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Dato con JPA -> Persona [id=4, nombre=Carlos, apellido=Piruch] 
+2022-06-28 19:59:10,354 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-06-28 19:59:10,358 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-06-28 19:59:10,362 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
