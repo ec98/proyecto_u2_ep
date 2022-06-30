@@ -1,6 +1,6 @@
 package com.uce.edu.demo.modelo.to;
 
-public class Estudiante {
+public class EstudianteTo {
 
 	private int id;
 	private String nombre;
@@ -9,12 +9,12 @@ public class Estudiante {
 	private String carrera;
 
 	// por defect
-	public Estudiante() {
+	public EstudianteTo() {
 
 	}
 
 	// constructor con paramteres
-	public Estudiante(int id, String nombre, String apellido, String cedula, String carrera) {
+	public EstudianteTo(int id, String nombre, String apellido, String cedula, String carrera) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
