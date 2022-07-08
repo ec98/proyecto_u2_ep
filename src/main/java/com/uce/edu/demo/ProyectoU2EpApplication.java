@@ -27,27 +27,17 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Persona persona = new Persona();
-		// persona.setId(10);
-		persona.setNombre("Ana");
-		persona.setApellido("Santanna");
-		persona.setGenero("M");
-		persona.setCedula("1224242221");
+		// READ
+		List<Persona> listaPersonG = this.iPersonaJpaService.buscarporGenero("M");
 
-		// CREATE
-		// this.iPersonaJpaService.guardar(persona);
-		// Logger.info("Se ha creado el estudiante ->" + persona);
-
-		//READ
-		Persona p = this.iPersonaJpaService.buscarporCedula("1224242221");
-		Logger.info("Persona encontrada -> " + p);
-		
-		List<Persona> listaPersonas = this.iPersonaJpaService.buscarporApellido("Santanna");
-		
-		for(Persona per: listaPersonas) {
-			Logger.info("Persona -> "+per);
+		for (Persona per : listaPersonG) {
+			Logger.info("Genero -> " + per);
 		}
-		
+
+		List<Persona> listaPersonN = this.iPersonaJpaService.buscarporNombre("Ana");
+		for (Persona per2 : listaPersonN) {
+			Logger.info("Nombre -> " + per2);
+		}
 	}
 
 }

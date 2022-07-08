@@ -6,6 +6,10 @@ import com.uce.edu.demo.repository.modelo.Persona;
 
 public interface IPersonaJpaService {
 	
+public List<Persona> buscarporNombre(String nombre);
+	
+	public List<Persona> buscarporGenero(String genero);
+	
 	public List<Persona> buscarporApellido(String apellido);
 	
 	public Persona buscarporCedula(String cedula);
