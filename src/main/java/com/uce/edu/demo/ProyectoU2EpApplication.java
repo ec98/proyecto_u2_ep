@@ -1,7 +1,5 @@
 package com.uce.edu.demo;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.Persona;
 import com.uce.edu.demo.service.IPersonaJpaService;
 
 @SpringBootApplication
@@ -27,17 +24,15 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		// READ
-		List<Persona> listaPersonG = this.iPersonaJpaService.buscarporGenero("M");
+		// UPDATE with JPQL
+		// int resultado = this.iPersonaJpaService.actualizarporApellido("Femenino",
+		// "Santanna");
+		// Logger.info("Cantidad de registros actualizados -> " + resultado);
 
-		for (Persona per : listaPersonG) {
-			Logger.info("Genero -> " + per);
-		}
+		// DELETE with JPQL
+		int resultado = this.iPersonaJpaService.eliminarporGenero("M");
+		Logger.info("Cantidad de registros eliminados -> " + resultado);
 
-		List<Persona> listaPersonN = this.iPersonaJpaService.buscarporNombre("Ana");
-		for (Persona per2 : listaPersonN) {
-			Logger.info("Nombre -> " + per2);
-		}
 	}
 
 }
