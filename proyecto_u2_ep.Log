@@ -5763,3 +5763,111 @@ Caused by: org.postgresql.util.PSQLException: ERROR: llave duplicada viola restr
 2022-07-10 16:12:34,807 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
 2022-07-10 16:12:34,810 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
 2022-07-10 16:12:34,813 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-07-11 19:15:09,824 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 14252 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-07-11 19:15:09,830 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-07-11 19:15:09,892 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-07-11 19:15:10,679 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-07-11 19:15:10,707 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces. 
+2022-07-11 19:15:11,145 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-07-11 19:15:11,208 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-07-11 19:15:11,407 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-07-11 19:15:11,546 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-07-11 19:15:11,795 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-07-11 19:15:11,817 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-07-11 19:15:12,641 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-07-11 19:15:12,777 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 19:15:13,018 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-07-11 19:15:13,044 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 3.653 seconds (JVM running for 5.638) 
+2022-07-11 19:15:13,192 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 19:15:13,196 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-07-11 19:15:13,200 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-07-11 19:18:51,128 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 17268 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-07-11 19:18:51,134 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-07-11 19:18:51,191 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-07-11 19:18:51,718 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-07-11 19:18:51,746 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces. 
+2022-07-11 19:18:52,222 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-07-11 19:18:52,290 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-07-11 19:18:52,504 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-07-11 19:18:52,626 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-07-11 19:18:52,910 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-07-11 19:18:52,937 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-07-11 19:18:53,778 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-07-11 19:18:53,892 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 19:18:54,130 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-07-11 19:18:54,154 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 3.438 seconds (JVM running for 4.799) 
+2022-07-11 19:18:54,282 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Typed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 19:18:54,289 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Named -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 19:18:54,291 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona TypedNamed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 19:18:54,301 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 19:18:54,305 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-07-11 19:18:54,309 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-07-11 21:35:59,624 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 14240 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-07-11 21:35:59,628 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-07-11 21:35:59,682 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-07-11 21:36:00,189 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-07-11 21:36:00,218 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces. 
+2022-07-11 21:36:00,626 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-07-11 21:36:00,689 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-07-11 21:36:00,881 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-07-11 21:36:01,002 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-07-11 21:36:01,217 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-07-11 21:36:01,236 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-07-11 21:36:01,953 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-07-11 21:36:02,063 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:36:02,271 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-07-11 21:36:02,290 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 3.02 seconds (JVM running for 4.365) 
+2022-07-11 21:36:02,402 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Typed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:36:02,404 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Named -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:36:02,406 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona TypedNamed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:36:02,408 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:36:02,418 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:36:02,421 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-07-11 21:36:02,424 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-07-11 21:37:21,303 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 18896 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-07-11 21:37:21,307 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-07-11 21:37:21,356 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-07-11 21:37:21,831 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-07-11 21:37:21,857 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 15 ms. Found 0 JPA repository interfaces. 
+2022-07-11 21:37:22,296 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-07-11 21:37:22,361 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-07-11 21:37:22,547 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-07-11 21:37:22,667 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-07-11 21:37:22,882 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-07-11 21:37:22,903 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-07-11 21:37:23,600 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-07-11 21:37:23,697 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:37:23,900 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-07-11 21:37:23,922 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 2.985 seconds (JVM running for 4.247) 
+2022-07-11 21:37:24,055 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Typed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:37:24,058 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Named -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:37:24,060 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona TypedNamed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:37:24,061 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:37:24,062 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=8, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1202939222] 
+2022-07-11 21:37:24,069 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:37:24,073 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-07-11 21:37:24,076 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2022-07-11 21:41:54,567 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Starting ProyectoU2EpApplication using Java 17.0.2 on CARLOS with PID 10720 (C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep\target\classes started by Carlos in C:\Users\59393\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\proyecto_u2_ep) 
+2022-07-11 21:41:54,572 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - No active profile set, falling back to 1 default profile: "default" 
+2022-07-11 21:41:54,634 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2022-07-11 21:41:55,142 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2022-07-11 21:41:55,167 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 15 ms. Found 0 JPA repository interfaces. 
+2022-07-11 21:41:55,609 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2022-07-11 21:41:55,668 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.9.Final 
+2022-07-11 21:41:55,841 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2022-07-11 21:41:55,953 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2022-07-11 21:41:56,396 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2022-07-11 21:41:56,415 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2022-07-11 21:41:57,106 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2022-07-11 21:41:57,214 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:41:57,427 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2022-07-11 21:41:57,447 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Started ProyectoU2EpApplication in 3.253 seconds (JVM running for 4.758) 
+2022-07-11 21:41:57,576 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Typed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:41:57,579 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona Named -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:41:57,580 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona TypedNamed -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:41:57,582 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=7, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1725860553] 
+2022-07-11 21:41:57,582 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=8, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1202939222] 
+2022-07-11 21:41:57,582 [restartedMain] INFO  c.u.e.d.ProyectoU2EpApplication                    - Persona -> Persona [id=9, nombre=Edwin, apellido=Piruch, genero=Masculino, cedula=1202939222] 
+2022-07-11 21:41:57,590 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2022-07-11 21:41:57,594 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2022-07-11 21:41:57,597 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 

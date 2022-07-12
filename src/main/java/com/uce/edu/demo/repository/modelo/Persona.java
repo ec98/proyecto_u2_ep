@@ -5,11 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity // MODELO se le conoce como entiti
 @Table(name = "persona") // recomendable para evitar errores
+@NamedQuery(name = "Persona.buscarporCedulaTyped", query = "SELECT p FROM Persona p WHERE p.cedula = :datoCedula")
+@NamedQuery(name = "Persona.buscarPorNombreApellido", query = "SELECT p FROM Persona p WHERE p.nombre = :datoNombre AND p.apellido = :datoApellido")
+
+//Segunda declaracion de NamedQuerys
+/*
+ * @NamedQueries({
+ * 
+ * @NamedQuery(name = "Persona.buscarporCedulaTyped", query =
+ * "SELECT p FROM Persona p WHERE p.cedula = :datoCedula"),
+ * 
+ * @NamedQuery(name = "Persona.buscarPorNombreApellido", query =
+ * "SELECT p FROM Persona p WHERE p.nombre = :datoNombre AND p.apellido = :datoApellido"
+ * ) })
+ */
 public class Persona {
 
 	@Id
