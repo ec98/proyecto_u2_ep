@@ -5,26 +5,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "estudiante")
+@NamedQuery(name = "Estudiante.buscarPorCedulaTyped", query = "SELECT e FROM Estudiante e WHERE e.cedula =: datoCedula")
+@NamedQuery(name = "Estudiante.buscarPorNombreApellidoTyped", query = "SELECT e FROM Estudiante e WHERE e.nombre =: datoNombre AND e.apellido =: datoApellido")
+@NamedQuery(name = "Estudiante.buscarPorNombreApellidoTypedNamed", query = "SELECT e FROM Estudiante e WHERE e.nombre =: datoNombre AND e.apellido =: datoApellido")
 public class Estudiante {
 
-	@Column(name = "id")
-	private int id; // matricula
+	@Column(name = "estu_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "estu_id")
+	@SequenceGenerator(name = "estu_id", sequenceName = "estu_id", allocationSize = 1)
+	private Integer id; // "matricula"
 
-	@Column(name = "nombre")
+	@Column(name = "estu_nombre")
 	private String nombre;
 
-	@Column(name = "apellido")
+	@Column(name = "estu_apellido")
 	private String apellido;
-	
-	@Id //referencia a lo que voy a buscar
-	@Column(name = "cedula")
+
+	@Id // referencia a lo que voy a buscar
+	@Column(name = "estu_cedula")
 	private String cedula;
 
-	@Column(name = "carrera")
+	@Column(name = "estu_carrera")
 	private String carrera;
 
 	@Override
