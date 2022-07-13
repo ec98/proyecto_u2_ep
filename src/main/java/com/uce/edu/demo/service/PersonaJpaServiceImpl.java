@@ -93,4 +93,22 @@ public class PersonaJpaServiceImpl implements IPersonaJpaService {
 		return this.iPersonaJpaRepository.eliminarporGenero(genero);
 	}
 
+	@Override
+	public Persona buscarporCedulaNative(String cedula) {
+		// TODO Auto-generated method stub
+		return this.iPersonaJpaRepository.buscarporCedulaNative(cedula);
+	}
+
+	@Override
+	public Persona buscarporCedulaNamedNative(String cedula) {
+		// TODO Auto-generated method stub
+		return this.iPersonaJpaRepository.buscarporCedulaNamedNative(cedula);
+	}
+
+	@Override
+	public Persona buscarporCedulaCriteriaApi(String cedula) {
+		// TODO Auto-generated method stub
+		return this.iPersonaJpaRepository.buscarporCedulaCriteriaApi(cedula);
+	}
+
 }

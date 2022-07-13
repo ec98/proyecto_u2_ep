@@ -11,9 +11,9 @@ public interface IPersonaJpaRepository {
 	public List<Persona> buscarporGenero(String genero);
 
 	public List<Persona> buscarporApellido(String apellido);
-	
-	//buscar por nombre y apellido
-	public List<Persona> buscarporNombreApellido(String nombre,String apellido);
+
+	// buscar por nombre y apellido
+	public List<Persona> buscarporNombreApellido(String nombre, String apellido);
 
 	public Persona buscarporCedula(String cedula);
 
@@ -25,6 +25,16 @@ public interface IPersonaJpaRepository {
 
 	// TypedNamed
 	public Persona buscarporCedulaTypedNamed(String cedula);
+
+	// Buscar por cedula Native
+	public Persona buscarporCedulaNative(String cedula);
+
+	// Buscar por cedula Named Native
+	public Persona buscarporCedulaNamedNative(String cedula);
+	
+	//Buscar por cedula Criteria Api
+	public Persona buscarporCedulaCriteriaApi(String cedula);
+
 
 	public Persona buscarporId(Integer id);
 
