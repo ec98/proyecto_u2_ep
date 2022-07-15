@@ -21,6 +21,18 @@ public interface IEstudianteJpaService {
 
 	public List<Estudiante> buscarPorNombreApellidoTypedNamed(String nombre, String apellido);
 
+	// Native Query
+	public Estudiante buscarPorCedulaNative(String cedula);
+
+	public List<Estudiante> buscarPorNombreApellidoCarreraNative(String nombre, String apellido, String carrera);
+
+	// NamedNativeQuery
+
+	public List<Estudiante> buscarPorApellidoCarreraNamedNative(String apellido, String carrera);
+
+	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera,
+			String cedula);
+
 	public Estudiante buscar(String cedula);
 
 	public void insertar(Estudiante estudiante);

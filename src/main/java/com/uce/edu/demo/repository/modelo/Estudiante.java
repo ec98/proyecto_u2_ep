@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -14,6 +16,11 @@ import javax.persistence.Table;
 @NamedQuery(name = "Estudiante.buscarPorCedulaTyped", query = "SELECT e FROM Estudiante e WHERE e.cedula =: datoCedula")
 @NamedQuery(name = "Estudiante.buscarPorNombreApellidoTyped", query = "SELECT e FROM Estudiante e WHERE e.nombre =: datoNombre AND e.apellido =: datoApellido")
 @NamedQuery(name = "Estudiante.buscarPorNombreApellidoTypedNamed", query = "SELECT e FROM Estudiante e WHERE e.nombre =: datoNombre AND e.apellido =: datoApellido")
+
+@NamedNativeQueries({
+		@NamedNativeQuery(name = "Estudiante.buscarPorApellidoCarreraNamedNative", query = "SELECT * FROM Estudiante WHERE estu_apellido =:datoApellido AND estu_carrera =:datoCarrera", resultClass = Estudiante.class),
+		@NamedNativeQuery(name = "Estudiante.eliminarNombreApellidoCarreraCedulaNamedNative", query = "DELETE FROM Estudiante WHERE estu_nombre =:datoNombre AND estu_apellido =:datoApellido AND estu_carrera =:datoCarrera AND estu_cedula =:datoCedula", resultClass = Estudiante.class) })
+
 public class Estudiante {
 
 	@Column(name = "estu_id")

@@ -1,5 +1,7 @@
 package com.uce.edu.demo;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.Persona;
-import com.uce.edu.demo.service.IPersonaJpaService;
+import com.uce.edu.demo.repository.modelo.Estudiante;
+import com.uce.edu.demo.service.IEstudianteJpaService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -16,7 +18,7 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IPersonaJpaService iPersonaJpaService;
+	private IEstudianteJpaService iEstudianteJpaService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
@@ -25,25 +27,34 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Persona persona = new Persona();
-		persona.setNombre("Carla");
-		persona.setApellido("Gomez");
-		persona.setCedula("192929221");
-		persona.setGenero("Femenino");
+		Estudiante estudiante = new Estudiante();
+		estudiante.setNombre("Mario");
+		estudiante.setApellido("Encalada");
+		estudiante.setCarrera("Odontologia");
+		estudiante.setCedula("1929221122"); // identificador
 
-		// this.iPersonaJpaService.guardar(persona);
-		
-		// 1 NativeQuery
-		Persona person1 = this.iPersonaJpaService.buscarporCedulaNative("192929221");
-		Logger.info("(Native Query) Persona -> " + person1);
+		// this.iEstudianteJpaService.insertar(estudiante);
 
-		// 2 Named Native Query
-		Persona person2 = this.iPersonaJpaService.buscarporCedulaNamedNative("192929221");
-		Logger.info("(Named Native Query) Persona -> " + person2);
-		
-		// 3 Criteria Api Query
-		Persona person3 = this.iPersonaJpaService.buscarporCedulaCriteriaApi("192929221");
-		Logger.info("(Criteria Api Query) Persona -> " + person3);
+		// 1) Native Query
+		Estudiante estu = this.iEstudianteJpaService.buscarPorCedulaNative("1929221122");
+		Logger.info("(Native Query) Estudiante -> " + estu);
+
+		List<Estudiante> ListEstudiante1 = this.iEstudianteJpaService.buscarPorNombreApellidoCarreraNative("Mario",
+				"Encalada", "Odontologia");
+		for (Estudiante item : ListEstudiante1) {
+			Logger.info("(Native Query) Estudiante -> " + item);
+		}
+
+		// 2) NamedNative Query
+		List<Estudiante> listEstudiante2 = this.iEstudianteJpaService.buscarPorApellidoCarreraNamedNative("Gomez",
+				"Odontologia");
+		for (Estudiante item : listEstudiante2) {
+			Logger.info("(NamedNative Query) Estudiante -> " + item);
+		}
+
+		int result = this.iEstudianteJpaService.eliminarNombreApellidoCarreraCedulaNamedNative("Favian", "Gomez",
+				"Odontologia", "192921919101");
+		Logger.info("(NamedNative Query) Eliminado estudiante -> " + result);
 
 	}
 

@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.uce.edu.demo.repository.modelo.Estudiante;
-import com.uce.edu.demo.repository.modelo.Persona;
 
 @Repository
 @Transactional
@@ -101,4 +100,46 @@ public class EstudianteJpaRepositoryImpl implements IEstudianteJpaRepository {
 
 	}
 
+	@Override
+	public Estudiante buscarPorCedulaNative(String cedula) {
+		// TODO Auto-generated method stub
+		Query myQuery = this.entityManager.createNativeQuery("SELECT * FROM estudiante WHERE estu_cedula =:datoCedula",
+				Estudiante.class);
+		myQuery.setParameter("datoCedula", cedula);
+		return (Estudiante) myQuery.getSingleResult();
+	}
+
+	@Override
+	public List<Estudiante> buscarPorNombreApellidoCarreraNative(String nombre, String apellido, String carrera) {
+		// TODO Auto-generated method stub
+		Query myQuery = this.entityManager.createNativeQuery(
+				"SELECT * FROM Estudiante WHERE estu_nombre =:datoNombre AND estu_apellido =:datoApellido AND estu_carrera =:datoCarrera",
+				Estudiante.class);
+		myQuery.setParameter("datoNombre", nombre);
+		myQuery.setParameter("datoApellido", apellido);
+		myQuery.setParameter("datoCarrera", carrera);
+		return (List<Estudiante>) myQuery.getResultList();
+	}
+
+	@Override
+	public List<Estudiante> buscarPorApellidoCarreraNamedNative(String apellido, String carrera) {
+		// TODO Auto-generated method stub
+		TypedQuery<Estudiante> myTypedQuery = this.entityManager
+				.createNamedQuery("Estudiante.buscarPorApellidoCarreraNamedNative", Estudiante.class);
+		myTypedQuery.setParameter("datoApellido", apellido);
+		myTypedQuery.setParameter("datoCarrera", carrera);
+		return myTypedQuery.getResultList();
+	}
+
+	@Override
+	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera, String cedula) {
+		// TODO Auto-generated method stub
+		TypedQuery<Estudiante> myTypedQuery = this.entityManager
+				.createNamedQuery("Estudiante.eliminarNombreApellidoCarreraCedulaNamedNative", Estudiante.class);
+		myTypedQuery.setParameter("datoNombre", nombre);
+		myTypedQuery.setParameter("datoApellido", apellido);
+		myTypedQuery.setParameter("datoCarrera", carrera);
+		myTypedQuery.setParameter("datoCedula", cedula);
+		return myTypedQuery.executeUpdate();
+	}
 }
