@@ -31,10 +31,12 @@ public interface IPersonaJpaRepository {
 
 	// Buscar por cedula Named Native
 	public Persona buscarporCedulaNamedNative(String cedula);
-	
-	//Buscar por cedula Criteria Api
+
+	// Buscar por cedula Criteria Api
 	public Persona buscarporCedulaCriteriaApi(String cedula);
 
+	// Dinamico
+	public Persona buscarDinamicamente(String nombre, String apellido, String genero);
 
 	public Persona buscarporId(Integer id);
 
