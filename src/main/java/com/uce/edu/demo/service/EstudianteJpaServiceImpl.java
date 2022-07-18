@@ -96,7 +96,21 @@ public class EstudianteJpaServiceImpl implements IEstudianteJpaService {
 	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera,
 			String cedula) {
 		// TODO Auto-generated method stub
-		return this.iEstudianteJpaRepository.eliminarNombreApellidoCarreraCedulaNamedNative(nombre, apellido, carrera, cedula);
+		return this.iEstudianteJpaRepository.eliminarNombreApellidoCarreraCedulaNamedNative(nombre, apellido, carrera,
+				cedula);
 	}
+
+	@Override
+	public List<Estudiante> buscarPorNombreApellidoCriteriaApi(String nombre, String apellido) {
+		// TODO Auto-generated method stub
+		return this.iEstudianteJpaRepository.buscarPorNombreApellidoCriteriaApi(nombre, apellido);
+	}
+
+	@Override
+	public Estudiante buscarPorCedulaCarreraCriteriaApi(String cedula, String carrera) {
+		// TODO Auto-generated method stub
+		return this.iEstudianteJpaRepository.buscarPorCedulaCarreraCriteriaApi(cedula, carrera);
+	}
+
 
 }

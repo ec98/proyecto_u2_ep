@@ -30,7 +30,14 @@ public interface IEstudianteJpaRepository {
 
 	public List<Estudiante> buscarPorApellidoCarreraNamedNative(String apellido, String carrera);
 
-	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera, String cedula);
+	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera,
+			String cedula);
+
+	// CriteriaApi
+
+	public List<Estudiante> buscarPorNombreApellidoCriteriaApi(String nombre, String apellido);
+
+	public Estudiante buscarPorCedulaCarreraCriteriaApi(String cedula, String carrera);
 
 	public void crear(Estudiante estudiante);
 

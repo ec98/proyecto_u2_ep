@@ -6,6 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -132,7 +136,8 @@ public class EstudianteJpaRepositoryImpl implements IEstudianteJpaRepository {
 	}
 
 	@Override
-	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera, String cedula) {
+	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera,
+			String cedula) {
 		// TODO Auto-generated method stub
 		TypedQuery<Estudiante> myTypedQuery = this.entityManager
 				.createNamedQuery("Estudiante.eliminarNombreApellidoCarreraCedulaNamedNative", Estudiante.class);
@@ -141,5 +146,51 @@ public class EstudianteJpaRepositoryImpl implements IEstudianteJpaRepository {
 		myTypedQuery.setParameter("datoCarrera", carrera);
 		myTypedQuery.setParameter("datoCedula", cedula);
 		return myTypedQuery.executeUpdate();
+	}
+
+	@Override
+	public List<Estudiante> buscarPorNombreApellidoCriteriaApi(String nombre, String apellido) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Estudiante> myQuery = miBuilder.createQuery(Estudiante.class);
+
+		// Hacemos un Root FROM para la construccion del SQL
+		Root<Estudiante> estudianteRoot = myQuery.from(Estudiante.class);
+		Predicate p1 = miBuilder.equal(estudianteRoot.get("nombre"), nombre);
+		Predicate p2 = miBuilder.equal(estudianteRoot.get("apellido"), apellido);
+
+		myQuery.select(estudianteRoot).where(p1);
+		myQuery.select(estudianteRoot).where(p2);
+
+		TypedQuery<Estudiante> myQueryFinal = this.entityManager.createQuery(myQuery);
+		return myQueryFinal.getResultList();
+	}
+
+	@Override
+	public Estudiante buscarPorCedulaCarreraCriteriaApi(String cedula, String carrera) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Estudiante> myQuery = miBuilder.createQuery(Estudiante.class);
+
+		// Hacemos un Root FROM para la construccion del SQL
+		Root<Estudiante> myTable = myQuery.from(Estudiante.class);
+
+		Predicate p1 = miBuilder.equal(myTable.get("cedula"), cedula);
+		Predicate p2 = miBuilder.equal(myTable.get("carrera"), carrera);
+
+		Predicate pT = null;
+		// Comparamos si el estudiante pertenece a la carrera c1,c2 o c3.
+		if (carrera.equals("Computacion")) {
+			pT = miBuilder.and(p1, p2);
+		} else if (carrera.equals("Matematicas")) {
+			pT = miBuilder.and(p1, p2);
+		} else {
+			pT = miBuilder.and(p1, p2);
+		}
+		myQuery.select(myTable).where(pT);
+
+		TypedQuery<Estudiante> myQueryFinal = this.entityManager.createQuery(myQuery);
+
+		return myQueryFinal.getSingleResult();
 	}
 }
