@@ -9,10 +9,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.Persona;
-import com.uce.edu.demo.repository.modelo.PersonaContadorGenero;
-import com.uce.edu.demo.repository.modelo.PersonaSencilla;
-import com.uce.edu.demo.service.IPersonaJpaService;
+import com.uce.edu.demo.repository.modelo.Estudiante;
+import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
+import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
+import com.uce.edu.demo.service.IEstudianteJpaService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -20,7 +20,7 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IPersonaJpaService iPersonaJpaService;
+	private IEstudianteJpaService iEstudianteJpaService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
@@ -29,23 +29,26 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Persona persona = new Persona();
-		persona.setNombre("Dayana");
-		persona.setApellido("Jaramillo");
-		persona.setGenero("Femenino");
-		persona.setCedula("11029292022");
+		Estudiante estudiante = new Estudiante();
+		estudiante.setNombre("Marcus");
+		estudiante.setApellido("Sebastian");
+		estudiante.setCarrera("Odontologia");
+		estudiante.setCedula("1485839222");
 
-		// this.iPersonaJpaService.guardar(persona);
+		// this.iEstudianteJpaService.insertar(estudiante);
 
-		List<PersonaSencilla> listPersonSen = this.iPersonaJpaService.buscarPorApellidoSencillo("Marco");
-		for (PersonaSencilla item : listPersonSen) {
-			Logger.info("(Sencillo) Persona -> " + item);
+		// Objetos Sencillos
+
+		// Ejemplo 1
+		List<EstudianteSencillo> listEs = this.iEstudianteJpaService.buscarPorApellidoCarreraCedulaSencillo("Gomez");
+		for (EstudianteSencillo item : listEs) {
+			Logger.info("(Objeto Sencillo) -> " + item);
 		}
-
-		List<PersonaContadorGenero> miListPCG = this.iPersonaJpaService.consultarCantidadPorGenero();
-		for (PersonaContadorGenero item : miListPCG) {
-			Logger.info("Genero, Cantidad -> " + item);
-
+		
+		//Ejemplo 2
+		List<EstudianteContadorCarrera> listECC = this.iEstudianteJpaService.contadorGeneralCarrera();
+		for (EstudianteContadorCarrera item : listECC) {
+			Logger.info("(Carrera, Apellido, Nombre) -> " + item);
 		}
 	}
 

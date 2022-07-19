@@ -3,6 +3,8 @@ package com.uce.edu.demo.service;
 import java.util.List;
 
 import com.uce.edu.demo.repository.modelo.Estudiante;
+import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
+import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
 
 public interface IEstudianteJpaService {
 
@@ -38,6 +40,12 @@ public interface IEstudianteJpaService {
 	public List<Estudiante> buscarPorNombreApellidoCriteriaApi(String nombre, String apellido);
 
 	public Estudiante buscarPorCedulaCarreraCriteriaApi(String cedula, String carrera);
+
+	// Objetos Sencillos
+
+	public List<EstudianteSencillo> buscarPorApellidoCarreraCedulaSencillo(String apellido);
+
+	public List<EstudianteContadorCarrera> contadorGeneralCarrera();
 
 	public Estudiante buscar(String cedula);
 

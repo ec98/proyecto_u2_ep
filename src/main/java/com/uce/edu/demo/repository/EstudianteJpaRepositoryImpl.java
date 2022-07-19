@@ -15,6 +15,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.uce.edu.demo.repository.modelo.Estudiante;
+import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
+import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
 
 @Repository
 @Transactional
@@ -136,6 +138,16 @@ public class EstudianteJpaRepositoryImpl implements IEstudianteJpaRepository {
 	}
 
 	@Override
+	public List<EstudianteSencillo> buscarPorApellidoCarreraCedulaSencillo(String apellido) {
+		// TODO Auto-generated method stub
+		TypedQuery<EstudianteSencillo> miQuery = this.entityManager.createQuery(
+				"SELECT NEW com.uce.edu.demo.repository.modelo.EstudianteSencillo(e.apellido,e.carrera,e.cedula) FROM Estudiante e WHERE e.apellido =: datoApellido",
+				EstudianteSencillo.class);
+		miQuery.setParameter("datoApellido", apellido);
+		return miQuery.getResultList();
+	}
+
+	@Override
 	public int eliminarNombreApellidoCarreraCedulaNamedNative(String nombre, String apellido, String carrera,
 			String cedula) {
 		// TODO Auto-generated method stub
@@ -193,4 +205,21 @@ public class EstudianteJpaRepositoryImpl implements IEstudianteJpaRepository {
 
 		return myQueryFinal.getSingleResult();
 	}
+
+	@Override
+	public List<EstudianteContadorCarrera> contadorGeneralCarrera() {
+		// select estu_carrera, count(estu_carrera), estu_apellido, estu_nombre from
+		// estudiante group by estu_carrera, estu_apellido, estu_nombre
+		// SELECT e.carrera, COUNT(e.carrera), e.apellido, e.nombre FROM Estudiante e
+		// GROUP BY e.carrera, e.apellido, e.nombre
+		// SELECT NEW
+		// com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera(e.carrera,
+		// COUNT(e.carrera), e.apellido, e.nombre)) FROM Estudiante e GROUP BY
+		// e.carrera, e.apellido, e.nombre
+		TypedQuery<EstudianteContadorCarrera> miQuery = this.entityManager.createQuery(
+				"SELECT NEW com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera(e.carrera, COUNT(e.carrera), e.apellido, e.nombre) FROM Estudiante e GROUP BY e.carrera, e.apellido, e.nombre",
+				EstudianteContadorCarrera.class);
+		return miQuery.getResultList();
+	}
+
 }
