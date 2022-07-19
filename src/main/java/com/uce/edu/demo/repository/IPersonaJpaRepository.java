@@ -3,6 +3,8 @@ package com.uce.edu.demo.repository;
 import java.util.List;
 
 import com.uce.edu.demo.repository.modelo.Persona;
+import com.uce.edu.demo.repository.modelo.PersonaContadorGenero;
+import com.uce.edu.demo.repository.modelo.PersonaSencilla;
 
 public interface IPersonaJpaRepository {
 
@@ -11,6 +13,9 @@ public interface IPersonaJpaRepository {
 	public List<Persona> buscarporGenero(String genero);
 
 	public List<Persona> buscarporApellido(String apellido);
+
+	// Sencillo
+	public List<PersonaSencilla> buscarPorApellidoSencillo(String apellido);
 
 	// buscar por nombre y apellido
 	public List<Persona> buscarporNombreApellido(String nombre, String apellido);
@@ -51,4 +56,7 @@ public interface IPersonaJpaRepository {
 
 	// DELETE
 	public int eliminarporGenero(String genero);
+	
+	//ContadorGenero
+	public List<PersonaContadorGenero> consultarCantidadPorGenero();
 }

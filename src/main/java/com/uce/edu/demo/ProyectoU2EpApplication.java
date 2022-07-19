@@ -9,8 +9,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.Estudiante;
-import com.uce.edu.demo.service.IEstudianteJpaService;
+import com.uce.edu.demo.repository.modelo.Persona;
+import com.uce.edu.demo.repository.modelo.PersonaContadorGenero;
+import com.uce.edu.demo.repository.modelo.PersonaSencilla;
+import com.uce.edu.demo.service.IPersonaJpaService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -18,7 +20,7 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IEstudianteJpaService iEstudianteJpaService;
+	private IPersonaJpaService iPersonaJpaService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
@@ -27,19 +29,24 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		// Criteria Api (2 ejemplos de la entidad Estudiante)
+		Persona persona = new Persona();
+		persona.setNombre("Dayana");
+		persona.setApellido("Jaramillo");
+		persona.setGenero("Femenino");
+		persona.setCedula("11029292022");
 
-		// Ejemplo 1
-		List<Estudiante> mylistEstudiante = this.iEstudianteJpaService.buscarPorNombreApellidoCriteriaApi("Favian",
-				"Gomez");
-		for (Estudiante item : mylistEstudiante) {
-			Logger.info("(Criteria Api) Estudiante-> " + item);
+		// this.iPersonaJpaService.guardar(persona);
+
+		List<PersonaSencilla> listPersonSen = this.iPersonaJpaService.buscarPorApellidoSencillo("Marco");
+		for (PersonaSencilla item : listPersonSen) {
+			Logger.info("(Sencillo) Persona -> " + item);
 		}
 
-		// Ejemplo 2
-		Estudiante estudiante = this.iEstudianteJpaService.buscarPorCedulaCarreraCriteriaApi("12292111111",
-				"Computacion");
-		Logger.info("(Criteria Api) Estudiante -> " + estudiante);
+		List<PersonaContadorGenero> miListPCG = this.iPersonaJpaService.consultarCantidadPorGenero();
+		for (PersonaContadorGenero item : miListPCG) {
+			Logger.info("Genero, Cantidad -> " + item);
+
+		}
 	}
 
 }
