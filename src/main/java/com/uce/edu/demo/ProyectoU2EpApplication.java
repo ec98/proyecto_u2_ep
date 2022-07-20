@@ -1,6 +1,6 @@
 package com.uce.edu.demo;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.Estudiante;
-import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
-import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
-import com.uce.edu.demo.service.IEstudianteJpaService;
+import com.uce.edu.demo.repository.modelo.Ciudadano;
+import com.uce.edu.demo.repository.modelo.Empleado;
+import com.uce.edu.demo.service.ICiudadanoService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -20,7 +19,7 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IEstudianteJpaService iEstudianteJpaService;
+	private ICiudadanoService iCiudadanoService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
@@ -29,27 +28,34 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Estudiante estudiante = new Estudiante();
-		estudiante.setNombre("Marcus");
-		estudiante.setApellido("Sebastian");
-		estudiante.setCarrera("Odontologia");
-		estudiante.setCedula("1485839222");
-
-		// this.iEstudianteJpaService.insertar(estudiante);
-
-		// Objetos Sencillos
-
-		// Ejemplo 1
-		List<EstudianteSencillo> listEs = this.iEstudianteJpaService.buscarPorApellidoCarreraCedulaSencillo("Gomez");
-		for (EstudianteSencillo item : listEs) {
-			Logger.info("(Objeto Sencillo) -> " + item);
-		}
+		Ciudadano ciu1 = new Ciudadano();
+		ciu1.setNombre("Maria");
+		ciu1.setApellido("Lopez");
 		
-		//Ejemplo 2
-		List<EstudianteContadorCarrera> listECC = this.iEstudianteJpaService.contadorGeneralCarrera();
-		for (EstudianteContadorCarrera item : listECC) {
-			Logger.info("(Carrera, Apellido, Nombre) -> " + item);
-		}
+		Empleado emp1 = new Empleado();
+		emp1.setCodigoIess("12292");
+		emp1.setSalario(new BigDecimal(45042));
+		//sentenciar el tipo de dato, si comento el empl_id_ciudadno sera null
+		emp1.setCiudadano(ciu1);
+		
+		ciu1.setEmpleado(emp1);
+		
+		this.iCiudadanoService.insertar(ciu1);
+		
+		//---------------------------------------
+		
+		Ciudadano ciu2 = new Ciudadano();
+		ciu2.setNombre("Maria");
+		ciu2.setApellido("Lopez");
+		
+		Empleado emp2 = new Empleado();
+		emp2.setCodigoIess("12292");
+		emp2.setSalario(new BigDecimal(45042));
+		emp2.setCiudadano(ciu2);
+		
+		ciu2.setEmpleado(emp2);
+		//this.iCiudadanoService.insertar(emp2);
+
 	}
 
 }
