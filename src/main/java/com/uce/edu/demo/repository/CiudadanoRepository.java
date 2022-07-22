@@ -21,4 +21,23 @@ public class CiudadanoRepository implements ICiudadanoRepository{
 		this.entityManager.persist(ciudadano);
 	}
 
+	@Override
+	public Ciudadano buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.entityManager.find(Ciudadano.class, id);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		// TODO Auto-generated method stub
+		Ciudadano ciudadano = this.buscar(id);
+		this.entityManager.remove(ciudadano);
+	}
+
+	@Override
+	public void actualizar(Ciudadano ciudadano) {
+		// TODO Auto-generated method stub
+		this.entityManager.merge(ciudadano);
+	}
+
 }

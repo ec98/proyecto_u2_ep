@@ -1,6 +1,6 @@
 package com.uce.edu.demo;
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.uce.edu.demo.repository.modelo.Ciudadano;
-import com.uce.edu.demo.repository.modelo.Empleado;
+import com.uce.edu.demo.repository.modelo.Pasaporte;
 import com.uce.edu.demo.service.ICiudadanoService;
 
 @SpringBootApplication
@@ -28,34 +28,44 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Ciudadano ciu1 = new Ciudadano();
-		ciu1.setNombre("Maria");
-		ciu1.setApellido("Lopez");
-		
-		Empleado emp1 = new Empleado();
-		emp1.setCodigoIess("12292");
-		emp1.setSalario(new BigDecimal(45042));
-		//sentenciar el tipo de dato, si comento el empl_id_ciudadno sera null
-		emp1.setCiudadano(ciu1);
-		
-		ciu1.setEmpleado(emp1);
-		
-		this.iCiudadanoService.insertar(ciu1);
-		
-		//---------------------------------------
-		
-		Ciudadano ciu2 = new Ciudadano();
-		ciu2.setNombre("Maria");
-		ciu2.setApellido("Lopez");
-		
-		Empleado emp2 = new Empleado();
-		emp2.setCodigoIess("12292");
-		emp2.setSalario(new BigDecimal(45042));
-		emp2.setCiudadano(ciu2);
-		
-		ciu2.setEmpleado(emp2);
-		//this.iCiudadanoService.insertar(emp2);
+		Ciudadano ciudadano = new Ciudadano();
+		ciudadano.setNombre("Alondra");
+		ciudadano.setApellido("Uribe");
+		ciudadano.setCedula("1728292922");
+		ciudadano.setFechaNacimiento(LocalDateTime.of(1998, 7, 12, 23, 11, 5));
 
+		Pasaporte pasaporte = new Pasaporte();
+		pasaporte.setNumero("#0022");
+		pasaporte.setFechaEmision(LocalDateTime.of(2009, 12, 1, 21, 14, 1));
+		pasaporte.setFechaCaducidad(LocalDateTime.of(2017, 7, 3, 11, 10, 2));
+
+		pasaporte.setCiudadano(ciudadano);
+
+		ciudadano.setPasaporte(pasaporte);
+
+//		// CREATE
+		Logger.info("Se creo el ciudadano.");
+		this.iCiudadanoService.insertar(ciudadano);
+
+		// READ
+		Logger.info("Se encontro el ciudadano.");
+		this.iCiudadanoService.buscar(19);
+
+		// UPDATE
+
+		// Actualizando el ciudadano.
+
+		ciudadano.setNombre("Paola");
+		ciudadano.setApellido("Uribe");
+		ciudadano.setCedula("1728292922");
+		ciudadano.setFechaNacimiento(LocalDateTime.of(2001, 8, 21, 11, 1, 3));
+		
+		Logger.info("Actualizando ciudadano.");
+		this.iCiudadanoService.actualizar(ciudadano);
+
+		// DELETE
+		Logger.info("Se elimino el ciudadano.");
+		this.iCiudadanoService.eliminar(19);
 	}
 
 }
