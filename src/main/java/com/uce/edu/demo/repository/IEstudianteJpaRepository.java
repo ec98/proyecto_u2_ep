@@ -2,9 +2,9 @@ package com.uce.edu.demo.repository;
 
 import java.util.List;
 
-import com.uce.edu.demo.repository.modelo.Estudiante;
 import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
 import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
+import com.uce.edu.demo.repository.modelo.onetoone.Estudiante;
 
 public interface IEstudianteJpaRepository {
 

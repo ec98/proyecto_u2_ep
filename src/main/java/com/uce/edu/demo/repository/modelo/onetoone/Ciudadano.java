@@ -1,4 +1,4 @@
-package com.uce.edu.demo.repository.modelo;
+package com.uce.edu.demo.repository.modelo.onetoone;
 
 import java.time.LocalDateTime;
 
@@ -36,12 +36,14 @@ public class Ciudadano {
 
 	// TABLA PRINCIPAL
 	@OneToOne(mappedBy = "ciudadano", cascade = CascadeType.ALL)
-	private Pasaporte pasaporte;
+	private Empleado empleado;
+
+	
 
 	@Override
 	public String toString() {
 		return "Ciudadano [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
-				+ ", fechaNacimiento=" + fechaNacimiento + ", pasaporte=" + pasaporte + "]";
+				+ ", fechaNacimiento=" + fechaNacimiento + ", empleado=" + empleado + "]";
 	}
 
 	// GETTERS AND SETTERS
@@ -85,12 +87,14 @@ public class Ciudadano {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Pasaporte getPasaporte() {
-		return pasaporte;
+	public Empleado getEmpleado() {
+		return empleado;
 	}
 
-	public void setPasaporte(Pasaporte pasaporte) {
-		this.pasaporte = pasaporte;
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
 	}
+
+	
 
 }

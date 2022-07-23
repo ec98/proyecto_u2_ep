@@ -1,4 +1,4 @@
-package com.uce.edu.demo.repository.modelo;
+package com.uce.edu.demo.repository.modelo.onetoone;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,9 +27,9 @@ public class Estudiante {
 	@Column(name = "estu_carrera")
 	private String carrera;
 
-	// tabla principal
+//	// tabla principal
 //	@OneToOne(mappedBy = "estudiante", cascade = CascadeType.ALL)
-//	private Pasaporte conserje;
+//	private Conserje conserje;
 
 //	@Override
 //	public String toString() {
@@ -70,7 +70,7 @@ public class Estudiante {
 		this.carrera = carrera;
 	}
 
-//	public Pasaporte getConserje() {
+//	public Conserje getConserje() {
 //		return conserje;
 //	}
 //

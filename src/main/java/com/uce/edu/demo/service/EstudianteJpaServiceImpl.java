@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uce.edu.demo.repository.IEstudianteJpaRepository;
-import com.uce.edu.demo.repository.modelo.Estudiante;
 import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
 import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
+import com.uce.edu.demo.repository.modelo.onetoone.Estudiante;
 
 @Service
 public class EstudianteJpaServiceImpl implements IEstudianteJpaService {

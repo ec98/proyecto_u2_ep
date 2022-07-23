@@ -14,9 +14,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.uce.edu.demo.repository.modelo.Estudiante;
 import com.uce.edu.demo.repository.modelo.EstudianteContadorCarrera;
 import com.uce.edu.demo.repository.modelo.EstudianteSencillo;
+import com.uce.edu.demo.repository.modelo.onetoone.Estudiante;
 
 @Repository
 @Transactional
