@@ -7,10 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.repository.modelo.onetomany.Habitacion;
-import com.uce.edu.demo.repository.modelo.onetomany.Hotel;
-import com.uce.edu.demo.service.IHabitacionService;
-import com.uce.edu.demo.service.IHotelService;
+import com.uce.edu.demo.repository.modelo.onetomany.Conjunto;
+import com.uce.edu.demo.service.ICasaService;
+import com.uce.edu.demo.service.IConjuntoService;
 
 @SpringBootApplication
 public class ProyectoU2EpApplication implements CommandLineRunner {
@@ -18,11 +17,11 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	private static final Logger Logger = LoggerFactory.getLogger(ProyectoU2EpApplication.class);
 
 	@Autowired
-	private IHotelService iHotelService;
-	
+	private IConjuntoService iConjuntoService;
+
 	@Autowired
-	private IHabitacionService iHabitacionServicel;
-	
+	private ICasaService iCasaService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU2EpApplication.class, args);
 	}
@@ -30,30 +29,46 @@ public class ProyectoU2EpApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-//		Hotel hotel2 = new Hotel();
-//		hotel2.setNombre("Hilton Colon GYE");
-//		hotel2.setDireccion("Malecon");
-//		
-//		this.iHotelService.insertar(hotel2);
-		
-		//buscar numero del hotel
-		Hotel hotel = new Hotel();
-		hotel.setId(1); //identifico el hotel con su respectiva habitacion
-		
-		Habitacion habitacion1 = new Habitacion();
-		habitacion1.setNumero("A9292");
-		habitacion1.setPiso("6");
-		habitacion1.setTipo("Matrimonial");
-		habitacion1.setHotel(hotel);
-		
-		Habitacion habitacion2 = new Habitacion();
-		habitacion2.setNumero("A1001");
-		habitacion2.setPiso("4");
-		habitacion2.setTipo("Familiar");
-		habitacion2.setHotel(hotel);
-		
-		this.iHabitacionServicel.insertar(habitacion1);
-		this.iHabitacionServicel.insertar(habitacion2);
+		// Imprimiendo solo la tabla maestro -> "Conjunto"
+
+		Conjunto conjunto = new Conjunto();
+		conjunto.setNombre("Joel Ambart");
+		conjunto.setTelefono("2929282111");
+//		conjunto.setId(1);
+
+//		Casa casa = new Casa();
+//		casa.setNumero("05");
+//		casa.setPisos("1");
+//		casa.setCosto(new BigDecimal("2211"));
+//		casa.setConjunto(conjunto);
+//
+//		Casa casa1 = new Casa();
+//		casa1.setNumero("02");
+//		casa1.setPisos("7");
+//		casa1.setCosto(new BigDecimal("22323922"));
+//		casa1.setConjunto(conjunto);
+
+		// CREATE
+		this.iConjuntoService.insertar(conjunto);
+		// this.iCasaService.insertar(casa);
+		// this.iCasaService.insertar(casa1);
+
+		// READ
+		this.iConjuntoService.buscar(7);
+		// this.iCasaService.Buscar(null);
+
+		// UPDATE
+		conjunto.setNombre("San Jose Benavides");
+		conjunto.setTelefono("29292929211");
+		this.iConjuntoService.actualizar(conjunto);
+//		 casa.setCosto(new BigDecimal("23222"));
+//		 casa1.setCosto(new BigDecimal("191911"));
+//		 this.iCasaService.actualizar(casa);
+//		 this.iCasaService.actualizar(casa1);
+
+		// DELETE
+		this.iConjuntoService.eliminar(7);
+		// this.iCasaService.eliminar(1);
 	}
 
 }
