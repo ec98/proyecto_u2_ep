@@ -6,19 +6,19 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.uce.edu.demo.repository.modelo.manytomany.Libro2;
+import com.uce.edu.demo.repository.modelo.manytomany.Autor2;
 
 @Repository
 @Transactional
-public class LibroRepositoryImpl implements ILibroRepository {
+public class AutorRepositoryImpl implements IAutorRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
-	public void insert(Libro2 libro) {
+	public void insertar(Autor2 autor) {
 		// TODO Auto-generated method stub
-		this.entityManager.persist(libro);
+		this.entityManager.persist(autor);
 	}
 
 }
