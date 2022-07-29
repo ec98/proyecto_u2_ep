@@ -4,36 +4,71 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "propietario")
 public class Propietario {
 
-	@Column(name="nombre")
+	@Id
+	@Column(name = "prop_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "prop_id_seq")
+	@SequenceGenerator(name = "prop_id_seq", sequenceName = "prop_id_seq", allocationSize = 1)
+	private Integer id;
+
+	@Column(name = "prop_nombre")
 	private String nombre;
 
-	@Column(name="apellido")
+	@Column(name = "prop_apellido")
 	private String apellido;
 
-	@Id
-	@Column(name="cedula")
+	@Column(name = "prop_cedula")
 	private String cedula;
 
-	@Column(name="fechaNacimiento")
+	@Column(name = "prop_fechaNacimiento")
 	private LocalDateTime fechaNacimiento;
+
+	@ManyToOne
+	@JoinColumn(name = "prop_id_matricula")
+	private Matricula matricula;
 
 	@Override
 	public String toString() {
-		return "Propietario [nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", fechaNacimiento="
-				+ fechaNacimiento + "]";
+		return "Propietario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
+				+ ", fechaNacimiento=" + fechaNacimiento + ", matricula=" + matricula + "]";
 	}
-
 	// GETTERS AND SETTERS
+
+	
+
 	public String getNombre() {
 		return nombre;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Matricula getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(Matricula matricula) {
+		this.matricula = matricula;
+	}
+
+	
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
